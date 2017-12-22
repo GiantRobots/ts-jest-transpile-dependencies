@@ -1,0 +1,35 @@
+{
+  "name": "ts-jest-transpile-dependencies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository":
+    "git@github.com:screendriver/jest-transformignorepatterns-bug.git",
+  "author": "Christian Rackerseder <git@echooff.de>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "mapCoverage": true,
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": ["<rootDir>/build"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
+    "transformIgnorePatterns": ["<rootDir>/node_modules/react-dates"]
+  },
+  "dependencies": {
+    "date-fns": "2.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "@types/jest": "21.1.9",
+    "babel-core": "6.26.0",
+    "babel-jest": "22.0.3",
+    "babel-preset-env": "1.6.1",
+    "jest": "22.0.3",
+    "ts-jest": "22.0.0",
+    "typescript": "2.6.2"
+  }
+}
